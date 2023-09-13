@@ -1,10 +1,13 @@
-s=["abcabcabcabc"]
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
+        rev_num=0
+        temp=x
 
-x=len(s)
+        while temp!=0:
+            z=temp%10
+            rev_num=rev_num*10+z
+            temp//=10
 
-print(x)
-
-for i in range(1,x//2+1):
-    if x%i==0:
-        print(x)
-    
+        return rev_num==x
